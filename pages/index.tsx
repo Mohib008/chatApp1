@@ -4,6 +4,8 @@ import Image from 'next/image';
 import Sidebar from '../components/Sidebar';
 import Feed from '../components/Feed';
 import Widgets from '../components/Widgets';
+import { GetServerSideProps } from 'next';
+import { fetchTweets } from '../utils/fetchTweets'
 
 const Home: NextPage = () => {
   return (
@@ -26,12 +28,12 @@ const Home: NextPage = () => {
 
 export default Home
 
-export const getServerSideProps: GetServerSideProps = async => (context) {
-   const tweets = await fetchTweets():
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  //const tweets = await fetchTweets();
 
    return{
      props: {
-       
+
      }
    }
 }
